@@ -1,7 +1,7 @@
 'use strict';
-// Run: node tools/vortex/farmtogether2/installers.test.js  (plain node, no deps)
+// Run: node tests/installers.test.js  (plain node, no deps)
 const assert = require('assert');
-const { rules, MODTYPE_ROOT, MODTYPE_PLUGINS } = require('./installers');
+const { rules, MODTYPE_ROOT, MODTYPE_PLUGINS } = require('../src/installers');
 
 const firstPlan = (files) => {
   for (const r of rules.slice().sort((a, b) => a.priority - b.priority)) {
