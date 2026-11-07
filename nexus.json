@@ -1,7 +1,14 @@
 {
   "domain": "site",
   "category": "Modding Tools > Vortex Extensions",
-  "modId": null,
-  "mainFileId": null,
-  "lastPublished": null
+  "modId": 2561,
+  "mainFileId": 12774,
+  "lastPublished": {
+    "version": "0.1.0",
+    "date": "2026-11-07",
+    "url": "https://www.nexusmods.com/site/mods/2561",
+    "fileSizeBytes": 656381,
+    "sha256": "6c3ccdcb2efe18ee0237a5ae623ffadb98a1cee34ff5f9eda757395d0b4f94a8",
+    "releaseCommit": "be9ee4b"
+  }
 }

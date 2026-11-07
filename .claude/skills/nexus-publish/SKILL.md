@@ -88,9 +88,23 @@ first time): `/edit/general`, `/edit/media`, `/edit/files`, `/edit/requirements`
 
 ## 4. Mode `create` - first release
 
-The new-page flow is **unverified** (no extension page has been created this way). Discover it from
-the current UI: the header "Upload" control is a JS button. Expect General -> Media -> Files ->
-Requirements -> Permissions.
+Verified 2026-11-07 (page 2561), with these live-UI facts:
+
+- Header **Upload** (desktop layout only - widen the window with `resize_window` and reload) ->
+  **Upload mod** -> "Create your draft mod page" dialog: Mod Name, Short description (350 chars),
+  Game combobox, Category combobox, **Create draft**. `site/mods/add` redirects to
+  `games/site/mods?uploadMod=true`, which hung the renderer; use the header button instead.
+- **Never type into the Game combobox** (prefilled "Modding Tools"): every keystroke froze the
+  renderer for 30 s+. Use `form_input`, then click the option.
+- The draft then edits at `/games/site/mods/<id>/edit/{general,media,files,requirements,permissions}`.
+  These pages are heavy: wait ~30 s after each navigation, keep **one** edit tab open, prefer
+  `read_page`/`find`/`form_input` over screenshots and JS, and retry a timed-out call once.
+- Files: hidden `file-input` + `file_upload` worked; fields `#display-name`, `#file-version`
+  (native setter); file description under "File options" (255 chars), changelog under "Add
+  changelog"; save via "Save file".
+- Duplicate search: `https://www.nexusmods.com/games/site/mods?keyword=Farm%20Together%202`.
+- If automation stalls near the end, hand the owner the edit link for Permissions + Publish (~2 min)
+  rather than re-dispatching; that is how 0.1.0 shipped.
 
 1. **Check it does not already exist:** search Nexus `site` mods for "Farm Together 2" by author
    dirtyredz, and check `nexus.json`. If a page exists, record its ID and switch to `update`.
