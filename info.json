@@ -1,7 +1,8 @@
 {
-  "name": "Farm Together 2 Support for Vortex",
+  "name": "Farm Together 2",
   "author": "dirtyredz",
   "version": "0.1.0",
   "description": "Adds support for Farm Together 2 (BepInEx 6 IL2CPP) to Vortex.",
-  "type": "game"
+  "type": "game",
+  "gameId": 7911
 }

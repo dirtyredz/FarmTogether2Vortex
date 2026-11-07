@@ -1,0 +1,19 @@
+# Packaged archives (pack.ps1) and scratch/logs
+dist/
+.tmp/
+*.partial
+*.log
+node_modules/
+
+# Claude Code machine-local settings
+.claude/settings.local.json
+.claude/worktrees/
+
+# OS / editor cruft
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# Structure-review gate markers (local only)
+.structure-review-pending*
+.structure-review-paused
